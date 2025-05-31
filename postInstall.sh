@@ -38,8 +38,8 @@ sudo apt clean
 
 echo "Installing snap packages..."
 sudo snap install \
- code-insiders --classic \
- blender --classic \
+    code-insiders --classic \
+    blender --classic \
     spotify --classic \
     vlc --classic \
     gimp --edge \
@@ -49,6 +49,21 @@ sudo snap install \
     darktable --edge \
     joplin-desktop --classic \
     pycharm-community --edge --classic \
-    
+    firefox --classic \
+    prusaslicer --classic \
+    kdenlive --classic \
+    libreoffice --classic \
+    proton-mail --classic \
+    drawio --classic \
+    bitwarden --classic \
+    audacity --classic \
+    arduino --classic \
+    krita --classic \
+
+
+echo "Packages installed from GitHub..."
+git clone https://github.com/pwr-Solaar/Solaar.git
+
+
 
 echo "Post-installation setup complete!"
