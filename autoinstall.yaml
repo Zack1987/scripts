@@ -1,0 +1,38 @@
+#desktop installation
+autoinstall:
+  version: 1
+  source:
+    id: ubuntu-desktop
+  identity:
+    hostname: main-desktop
+    username: Zack
+    password: $6$KjUpX0DMb41koNI5$i.AqZwVQWNxcLpBFpgDcUjFBLu8HVspVdl9DvSflI4meveCh4HwsfrHm3yqVsQSAmDlXMCDup1a4eWHmB5Adz
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+    variant: ''
+  storage:
+    layout: lvm
+    config:
+      - type: disk
+        match:
+          size: '>=20GB'
+        wipe: true
+      - type: partition
+        size: '20GB'
+        filesystem: ext4
+        mountpoint: /
+      - type: partition
+        size: '2GB'
+        filesystem: swap
+  ssh:
+    install: true
+  packages:
+    - ubuntu-desktop
+    - openssh-server
+  late-commands:
+    - echo "Installation complete!" > /var/log/installation.log
+ 
+  settings:
+    desktop_environment: kde plasma
+    display_manager: sddm
